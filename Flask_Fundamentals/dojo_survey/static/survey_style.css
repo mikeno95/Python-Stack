@@ -1,0 +1,29 @@
+* {
+	margin: 0px;
+	padding: 0px
+}
+body {
+	font-family: helvetica;
+	padding: 20px;
+}
+.form-group {
+	width: 300px;
+}
+textarea {
+	width: 300px;
+	height: 100px;
+}
+label, input, select, h1, li {
+	margin: 10px 0px;
+}
+input[type='submit'] {
+	display: block;
+}
+ul {
+	list-style-type: none;
+	list-style-position: inside;
+}
+fieldset {
+	padding: 10px;
+	width: 400px;
+}
