@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Registration Form Assignment">
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+<!-- 	<link rel="stylesheet" type="text/css" href="/Users/mikeno/Desktop/python_stack/flask_fundamentals/registration/static/style.css"> -->
+</head>
+<body>
+	<div id=wrapper>
+		<h1>Registration Form</h1>
+		{% with messages = get_flashed_messages(category_filter=["error"]) %}
+			{% if messages %}
+				{% for message in messages %}
+					<p style='color:red;'>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		{% with messages = get_flashed_messages(category_filter=["success"]) %}
+			{% if messages %}
+				{% for message in messages %}
+					<p style='color:green;'>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form action="/results" method="POST">
+			<label for='email'>Email: </label>
+			<input type='email' name='email'/><br>
+			<label for='first_name'>First Name: </label>
+			<input type='text' name='first_name'/><br>
+			<label for='last_name'>Last Name: </label>
+			<input type='text' name='last_name'/><br>
+			<label for='birthday'>Birthday (Year/Month/Date): </label>
+			<input type="date" name="bday"><br>
+			<label for='psw'>Password: </label>
+			<input type='password' name='psw'/><br>
+			<label for='cpsw'>Confirm Password: </label>
+			<input type='password' name='cpsw'/><br>
+			<input type='submit' name='submit'/>
+		</form>
+	</div>
+</body>
+</html>
