@@ -1,0 +1,28 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+div {
+	font-family: helvetica;
+}
+h1, p {
+	margin: 10px;
+}
+#wrapper {
+	text-align: center;
+	width: 600px;
+	padding: 20px;
+}
+.guess_box, .correct_box {
+	width: 200px;
+	height: 100px;
+	color: white;
+	padding-top: 90px;
+	display: inline-block;
+}
+.guess_box {
+	background-color: red; 
+}
+.correct_box {
+	background-color: green; 
+}
