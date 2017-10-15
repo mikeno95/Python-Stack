@@ -7,7 +7,7 @@
 <body>
 	<h1>Random Word (attempt # {{request.session.count}})</h1>
 	<div style="border: 1px solid; width: 200px;">{{request.session.random}}</div>
-	<form action='/random_word/reset' method='post'>
+	<form action='/random_word/generate' method='post'>
 		{% csrf_token %}
 		<input type='submit' name='submit' value='generate'/>
 	</form>
