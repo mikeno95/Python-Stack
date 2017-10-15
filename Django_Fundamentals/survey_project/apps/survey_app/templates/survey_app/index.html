@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Dojo Survey">
+	<title>Survey Page</title>
+</head>
+<body>
+	{% if messages %}
+		{% for message in messages %}
+			<p style="color:red;">{{message}}</p>
+		{% endfor %}
+	{% endif %}
+	<form action='/process' method='POST'>
+		{% csrf_token %}
+		<label for='name'>Your Name:</label>
+		<input type="text" name="name"><br>
+		<label for='location'>Dojo Location:</label>
+		<select name='location'>
+			<option value="Location">Location</option>
+			<option value="San Jose">San Jose</option>
+			<option value="Bellevue">Bellevue</option>
+			<option value="Other">Other</option>
+		</select><br>
+		<label for='language'>Favorite Language:</label>
+		<select name="language">
+			<option value="Language">Language</option>
+			<option value="JavaScript">JavaScript</option>
+			<option value="Python">Python</option>
+			<option value="CSS">CSS</option>
+			<option value="HTML">HTML</option>
+			<option value="Other">Other</option>
+		</select><br>
+		<label for='comment'>Optional Comment (120 characters): </label><br>
+		<textarea id='comment' name='comment'></textarea><br>
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

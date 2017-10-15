@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lan='en'>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Dojo Survey Results">
+	<title>Survey Results</title>
+</head>
+<body>
+	<p style='color:green;'>Thanks for submitting this form! You have submitted this form {{request.session.count}} time(s) now.</p>
+	<div>
+		<h1>Submitted Info:</h1>
+		<ul>
+			<li>Name: {{request.session.name}}</li>
+			<li>Dojo Location: {{request.session.location}}</li>
+			<li>Favorite Language: {{request.session.language}}</li>
+			<li>Comment: {{request.session.comment}}</li>
+		</ul>
+		<form action='/restart' method='POST'>
+			{% csrf_token %}
+			<input type="submit" name="back" value='Go Back'>
+		</form>
+	</div>
+</body>
+</html>
