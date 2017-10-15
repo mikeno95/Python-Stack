@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<meta name='description' content="Session Words Assignment">
+	<title>Session Words</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'session_words_app/session_words.css' %}">
+</head>
+<body>
+	<div class='box'>
+		{% if messages %}
+			{% for message in messages %}
+				<p style="color:red;">{{message}}</p>
+			{% endfor %}
+		{% endif %}
+		<form action='/add_word' method='POST'>
+			{% csrf_token %}
+			<h1>Add a new word</h1>
+			<input type="text" name="new_word"><br><br>
+			<label for='color'>Choose Color:</label><br>
+			<input type="radio" name="color" value="red"> Red<br>
+			<input type="radio" name="color" value="blue"> Blue<br>
+			<input type="radio" name="color" value="green"> Green<br><br>
+			<input type="checkbox" name="big" value='26px'> show in BIG fonts!<br><br>
+			<input type="submit" name="submit" value="Add to Session">
+		</form>
+	</div>
+	<div class='box'>
+		<form action='/clear' method='POST'>
+			{% csrf_token %}
+			<input type="submit" name="clear" value="Clear Session">
+		</form>
+		{% for string in request.session.word_list %}
+			<div class='words'>
+				{% if not string.big %}
+					<p style='color:{{string.w_color}};'>{{string.word}}</p>
+				{% else %}
+					<p style='color:{{string.w_color}}; font-size: {{string.big}};'>{{string.word}}</p>
+				{% endif %}
+				<p><span>added on {{string.time}}</span></p>
+			</div>
+		{% endfor %}
+	</div>
+</body>
+</html>
