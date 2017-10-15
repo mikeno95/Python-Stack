@@ -1,0 +1,2 @@
+# Survey Form Assignment
+The purpose of this assignment is to create a survey wireframe in a new Django Project called 'surveys'. The goal was to practice and understand the usage of how forms are submitted and how POST and session data work in Django. When the survey is submitted, if fields are left empty, an warning message will pop up. If the fields are properly filled, then the site will be redirected to the 'results' page, where it will display the submitted information as well as how many times the survey have been submitted. 

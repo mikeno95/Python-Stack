@@ -1,0 +1,2 @@
+# Random Word Generator Assignment
+The purpose of this assignment was practice the usage of form submissions and session by creating a new Django app called 'random_word', which generates a random 14 character string and counts how many times a new random word has been generated. Whenever the user wants to 'reset' the counter for the number of attempts, they can send a new http request to localhost:8000/random_word/reset. 
