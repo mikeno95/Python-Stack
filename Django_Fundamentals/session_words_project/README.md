@@ -1,7 +1,7 @@
 # Session Words Assignment
 The purpose of this assignment was to use forms and sessions in Django, specifically to get familiar with use of radio buttons and checkboxes. 
-
 <br>
+
 The requirements were: 
 * Create a new app called 'session_words'
 * Allow the user to add any new word to the session
