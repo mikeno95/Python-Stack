@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course Info</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'course_app/css/course_app.css' %}">
+</head>
+<body>
+	<div id='wall'>
+		<h1>{{course.name}}</h1>
+		<p>{{course.description.desc}}</p>
+	</div>
+	<div id='comments'>
+		<h1>Add Comment:</h1>
+		<form action="/bonus/comment/{{course.id}}" method='post'>
+			{% csrf_token %}
+			<textarea name="comment"></textarea>
+			<input type="submit" name="submit" value="Comment">
+		</form>
+	</div>
+	<div id='wall'>
+		<h1>Comments:</h1>
+		{% for comment in course.comment.all %}
+			<p>{{comment.comment}}</p>
+		{% endfor %}
+	</div>
+</body>
+</html>

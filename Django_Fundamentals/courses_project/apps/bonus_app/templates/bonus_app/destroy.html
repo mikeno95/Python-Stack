@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Are you sure?</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'course_app/css/course_app.css' %}">
+</head>
+<body>
+	<div id='delete'>
+		<h1>Are you sure you want to delete the following course? </h1>
+		<label>Course Name: </label>
+		<p>{{course.name}}</p>
+		<label>Description: </label>
+		<p>{{course.desc}}</p>
+		<a href="/bonus">Uh... I changed my mind</a>
+		<a href="/bonus/bye/{{course.id}}">Yes! I want to delete this</a>
+	</div>
+</body>
+</html>

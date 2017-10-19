@@ -40,3 +40,10 @@ th, td {
 label {
 	font-weight: bold;
 }
+#wall, #comments {
+	width: 500px;
+	overflow-wrap: break-word;
+}
+textarea[name="comment"] {
+	height: 50px;
+}
