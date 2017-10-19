@@ -2,25 +2,30 @@
 <html>
 <head>
 	<title>Semi User Edit </title>
-	{% extends "semi_users_app/new.html" %}
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'semi_users_app/css/semi_users.css' %}">
 </head>
 
 <body>
-	{% block content %}
 	<h1>Edit User {{user.id}}</h1>
-	{% endblock%}
-	{% block form %}
+	{% if messages %}
+		{% for message in messages %}
+			<p style='color:red;'>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+	<div id='box'>
 		<form action='/users/{{user.id}}/update' method="POST">
-			{% endblock %}
-			{% block input %}
+			{% csrf_token %}
+			<label for='first_name'>First Name:</label>
+			<input type='text' name='first_name' value={{user.first_name}}>
+			<label for='last_name'>Last Name:</label>
+			<input type="text" name="last_name" value={{user.last_name}}>
+			<label for='email'>Email Address:</label>
+			<input type="text" name="email" value="{{user.email}}">
 			<input type="submit" name="update" value='update'>
-			{% endblock %}
 		</form>
-		{% block show %}
 		<a href="/users/{{user.id}}">Show</a>
-		{% endblock %}
+		<a href="/users"> Go Back</a>
 	</div>
 </body>
 </html>

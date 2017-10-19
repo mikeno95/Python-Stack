@@ -8,9 +8,7 @@
 
 </head>
 <body>
-	{% block content %}
 	<h1>Add a new user</h1>
-	{% endblock %}
 	{% if messages %}
 		{% for message in messages %}
 			<p style='color:red;'>{{message}}</p>
@@ -18,9 +16,7 @@
 	{% endif %}
 	
 	<div id='box'>
-		{% block form %}
 		<form action='/users/create' method='POST'>
-			{% endblock %}
 			{% csrf_token %}
 			<label for='first_name'>First Name:</label>
 			<input type='text' name='first_name'>
@@ -28,12 +24,8 @@
 			<input type="text" name="last_name">
 			<label for='email'>Email Address:</label>
 			<input type="text" name="email">
-			{% block input %}
 			<input type="submit" name="create" value='create'>
-			{% endblock %}
 		</form>
-		{% block show %}
-		{% endblock %}
 		<a href="/users"> Go Back</a>
 	</div>
 	
