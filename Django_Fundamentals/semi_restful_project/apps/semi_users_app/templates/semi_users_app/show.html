@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi Restful User: Show User</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'semi_users_app/css/semi_users.css' %}">
+</head>
+<body>
+	<h1>User {{user.id}}</h1>
+	<p><span>Full Name:</span> {{user.first_name}} {{user.last_name}}</p>
+	<p><span>Email:</span> {{user.email}}</p>
+	<p><span>Created At:</span> {{user.created_at}}</p>
+
+	<a href="/users/{{user.id}}/edit">Edit</a>
+	<a href="/users/{{user.id}}/check">Delete</a>
+</body>
+</html>

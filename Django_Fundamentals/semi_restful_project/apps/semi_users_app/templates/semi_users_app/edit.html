@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi User Edit </title>
+	{% extends "semi_users_app/new.html" %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'semi_users_app/css/semi_users.css' %}">
+</head>
+
+<body>
+	{% block content %}
+	<h1>Edit User {{user.id}}</h1>
+	{% endblock%}
+	{% block form %}
+		<form action='/users/{{user.id}}/update' method="POST">
+			{% endblock %}
+			{% block input %}
+			<input type="submit" name="update" value='update'>
+			{% endblock %}
+		</form>
+		{% block show %}
+		<a href="/users/{{user.id}}">Show</a>
+		{% endblock %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Are you sure?</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'semi_users_app/css/semi_users.css' %}">
+</head>
+<body>
+	<div id='box'>
+		<p>Are you sure you want to delete?</p>
+		<p><a href="/users/{{user.id}}/destroy">Yes</a></p>
+		<p><a href="/users/">I changed my mind</a></p>
+	</div>
+</body>
+</html>
