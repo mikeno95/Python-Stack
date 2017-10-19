@@ -23,7 +23,7 @@ def create(request): # post route to create new user from the client's input
 		last_name = request.POST['last_name']
 		email = request.POST['email']
 		User.objects.create(first_name=first_name, last_name=last_name, email=email) # creates new user
-		return redirect('/users') # redirects back to the root (table page), and new user should be added
+		return redirect('/users/' + str(User.objects.last())) # redirects to the 'show' page for that created user
 
 def show(request, id): # page that shows the selected user
 	context = {
